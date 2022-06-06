@@ -28,11 +28,10 @@
                     <th scope="row">{{$vehiculo->id}}</th>
                     <td>{{$vehiculo->marca->nombre}}</td>
                     <td>{{$vehiculo->modelo->modelo}}</td>
-                    <td>{{$vehiculo->motores->combustible}}</td>
+                    <td>{{$vehiculo->motor->combustible}}</td>
                     <td>{{$vehiculo->traccion->tipo}}</td>
                     <td>{{$vehiculo->year_vehicle->year}}</td>
                     <td>{{$vehiculo->serie->Carroceria->tipo}} {{$vehiculo->serie->Carroceria->tipo}} {{$vehiculo->serie->puertas}}-Puertas</td>
-                    <td>{{$vehiculo->plazas->nombre}}</td>
                     <td>{{$vehiculo->caja_cambios->tipo}}</td>
                     <td>{{$vehiculo->peso}}</td>
                     {{-- <th><a href="{{route('home')}}" class="btn btn-primary btn-sm">Editar</a></th>

@@ -39,7 +39,7 @@ class Vehicle extends Model
     public function caja(){
         return $this->belongsTo(Gearbox::class);
     }
-    public function motores(){
+    public function motor(){
         return $this->belongsTo(Motor::class);
     }
     public function modelo(){

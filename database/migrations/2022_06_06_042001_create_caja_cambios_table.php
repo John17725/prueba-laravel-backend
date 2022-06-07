@@ -15,7 +15,7 @@ class CreateCajaCambiosTable extends Migration
     {
         Schema::create('caja_cambios', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo')->default('Mecanica');
+            $table->string('tipo');
             $table->timestamps();
         });
     }

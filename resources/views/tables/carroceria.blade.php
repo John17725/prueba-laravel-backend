@@ -16,14 +16,18 @@
         </thead>
         <tbody>
             @foreach ($carrocerias as $key => $carroceria)
+            <form action="{{route('bodywork.delete')}}" method="POST">
+                @csrf
                 <tr>
+                    <input type="text" style="display:none;" name="id" value="{{$carroceria->id}}">
                     <th scope="row">{{$carroceria->id}}</th>
                     <td>{{$carroceria->tipo}}</td>
                     <th>
-                        <a href="{{route('home')}}" class="btn btn-primary btn-sm">Editar</a>
-                        <a href="{{route('home')}}" class="btn btn-primary btn-sm">Borrar</a>
+                        <a href="{{route('bodywork.edit', $carroceria->id)}}" class="btn btn-primary btn-sm">Editar</a>
+                        <button type="submit" class="btn btn-primary btn-sm">Borrar</button>
                     </th>
                 </tr>
+            </form>
             @endforeach
         </tbody>
     </table>

@@ -15,7 +15,7 @@ class CreateYearVehicleTable extends Migration
     {
         Schema::create('year_vehicle', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('year')->default(2019);
+            $table->unsignedBigInteger('year');
             $table->timestamps();
         });
     }

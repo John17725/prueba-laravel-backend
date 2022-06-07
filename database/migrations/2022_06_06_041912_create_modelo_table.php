@@ -15,7 +15,7 @@ class CreateModeloTable extends Migration
     {
         Schema::create('modelo', function (Blueprint $table) {
             $table->id();
-            $table->string('modelo')->default('Tsuru');
+            $table->string('modelo');
             $table->timestamps();
         });
     }

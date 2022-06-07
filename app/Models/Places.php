@@ -17,4 +17,12 @@ class Places extends Model
             'cantidad' => $places
         ]);
     }
+    public function updatePlace($id,$places){
+        return Places::where('id',$id)->update([
+            'cantidad' => $places
+        ]);
+    }
+    public function deletePlaces($id){
+        return Places::where('id', $id)->delete();
+    }
 }

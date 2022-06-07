@@ -17,4 +17,12 @@ class ModelVehicle extends Model
             'modelo' => $modelo
         ]);
     }
+    public function deleteModelVehicle($id){
+        return ModelVehicle::where('id', $id)->delete();
+    }
+    public function updateModel($id,$modelo){
+        return ModelVehicle::where('id',$id)->update([
+            'modelo' => $modelo
+        ]);
+    }
 }

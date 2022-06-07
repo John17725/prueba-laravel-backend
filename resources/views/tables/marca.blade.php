@@ -16,14 +16,18 @@
         </thead>
         <tbody>
             @foreach ($marks as $key => $mark)
+            <form action="{{route('marks.delete')}}" method="POST">
+            @csrf
                 <tr>
+                    <input type="text" style="display:none;" name="id" value="{{$mark->id}}">
                     <th scope="row">{{$mark->id}}</th>
                     <td>{{$mark->nombre}}</td>
                     <th>
-                        <a href="{{route('home')}}" class="btn btn-primary btn-sm">Editar</a>
-                        <a href="{{route('home')}}" class="btn btn-primary btn-sm">Borrar</a>
+                        <a href="{{route('marks.edit', $mark->id)}}" class="btn btn-primary btn-sm">Editar</a>
+                        <button type="submit" class="btn btn-primary btn-sm">Borrar</button>
                     </th>
                 </tr>
+            </form>
             @endforeach
         </tbody>
     </table>

@@ -17,4 +17,12 @@ class VehicleYear extends Model
             'year' => $year
         ]);
     }
+    public function updateYear($id,$year){
+        return VehicleYear::where('id',$id)->update([
+            'year' => $year
+        ]);
+    }
+    public function deleteVehicleYear($id){
+        return VehicleYear::where('id', $id)->delete();
+    }
 }

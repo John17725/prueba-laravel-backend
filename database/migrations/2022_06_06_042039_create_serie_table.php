@@ -15,9 +15,9 @@ class CreateSerieTable extends Migration
     {
         Schema::create('serie', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('carroceria_id')->unsigned()->default(1);
-            $table->unsignedBigInteger('puertas')->nullable()->default(5);
-            $table->string('version')->nullable()->default('Mini');
+            $table->unsignedBigInteger('carroceria_id')->unsigned();
+            $table->unsignedBigInteger('puertas')->nullable();
+            $table->string('version')->nullable();
             $table->timestamps();
             $table->foreign('carroceria_id')->references('id')->on('carroceria')->ononDelete('cascade');
         });

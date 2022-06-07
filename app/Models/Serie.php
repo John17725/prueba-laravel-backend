@@ -21,7 +21,16 @@ class Serie extends Model
             'version' => $version
         ]);
     }
-
+    public function deleteSerie($id){
+        return Serie::where('id', $id)->delete();
+    }
+    public function updateSerie($id,$carroceria_id,$puertas,$version){
+        return Serie::where('id','=',$id)->update([
+            'carroceria_id' => $carroceria_id,
+            'puertas' => $puertas,
+            'version' => $version
+        ]);
+    }
     public function Carroceria(){
         return $this->belongsTo(BodyWork::class);
     }

@@ -16,14 +16,18 @@
         </thead>
         <tbody>
             @foreach ($years as $key => $year)
+            <form action="{{route('years.delete')}}" method="POST">
+                @csrf
                 <tr>
+                    <input type="text" style="display:none;" name="id" value="{{$year->id}}">
                     <th scope="row">{{$year->id}}</th>
                     <td>{{$year->year}}</td>
                     <th>
-                        <a href="{{route('home')}}" class="btn btn-primary btn-sm">Editar</a>
-                        <a href="{{route('home')}}" class="btn btn-primary btn-sm">Borrar</a>
+                        <a href="{{route('years.edit',$year->id)}}"  class="btn btn-primary btn-sm">Editar</a>
+                        <button type="submit" class="btn btn-primary btn-sm">Borrar</button>
                     </th>
                 </tr>
+            </form>
             @endforeach
         </tbody>
     </table>

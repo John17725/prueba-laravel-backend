@@ -17,4 +17,12 @@ class Mark extends Model
             'nombre' => $name
         ]);
     }
+    public function deleteMark($id){
+        return Mark::where('id', $id)->delete();
+    }
+    public static function updateMarca($id,$name){
+        return Mark::where('id',$id)->update([
+            'nombre' => $name
+        ]);
+    }
 }

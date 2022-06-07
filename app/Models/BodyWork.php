@@ -17,4 +17,12 @@ class BodyWork extends Model
             'tipo' => $tipo
         ]);
     }
+    public function updateCarroceria($id,$tipo){
+        return BodyWork::where('id',$id)->update([
+            'tipo' => $tipo
+        ]);
+    }
+    public function deleteCarroceria($id){
+        return BodyWork::where('id', $id)->delete();
+    }
 }

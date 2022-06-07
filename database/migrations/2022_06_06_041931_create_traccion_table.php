@@ -15,7 +15,7 @@ class CreateTraccionTable extends Migration
     {
         Schema::create('traccion', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo')->default('Delantera');
+            $table->string('tipo');
             $table->timestamps();
         });
     }

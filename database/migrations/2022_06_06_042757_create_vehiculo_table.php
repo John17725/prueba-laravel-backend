@@ -25,14 +25,14 @@ class CreateVehiculoTable extends Migration
             $table->unsignedBigInteger('caja_cambios_id');
             $table->unsignedBigInteger('plazas_id');
             $table->timestamps();
-            $table->foreign('marca_id')->references('id')->on('marca');
-            $table->foreign('modelo_id')->references('id')->on('modelo');
-            $table->foreign('motor_id')->references('id')->on('motor');
-            $table->foreign('traccion_id')->references('id')->on('traccion');
-            $table->foreign('year_vehicle_id')->references('id')->on('year_vehicle');
-            $table->foreign('serie_id')->references('id')->on('serie');
-            $table->foreign('caja_cambios_id')->references('id')->on('caja_cambios');
-            $table->foreign('plazas_id')->references('id')->on('plazas');
+            $table->foreign('marca_id')->references('id')->on('marca')->onDelete('cascade');
+            $table->foreign('modelo_id')->references('id')->on('modelo')->onDelete('cascade');
+            $table->foreign('motor_id')->references('id')->on('motor')->onDelete('cascade');
+            $table->foreign('traccion_id')->references('id')->on('traccion')->onDelete('cascade');
+            $table->foreign('year_vehicle_id')->references('id')->on('year_vehicle')->onDelete('cascade');
+            $table->foreign('serie_id')->references('id')->on('serie')->onDelete('cascade');
+            $table->foreign('caja_cambios_id')->references('id')->on('caja_cambios')->onDelete('cascade');
+            $table->foreign('plazas_id')->references('id')->on('plazas')->onDelete('cascade');
         });
     }
 

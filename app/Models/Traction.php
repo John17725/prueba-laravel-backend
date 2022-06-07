@@ -17,4 +17,12 @@ class Traction extends Model
             'tipo' => $traccion
         ]);
     }
+    public function updateTraction($id,$traccion){
+        return Traction::where('id',$id)->update([
+            'tipo' => $traccion
+        ]);
+    }
+    public function deleteTraction($id){
+        return Traction::where('id', $id)->delete();
+    }
 }

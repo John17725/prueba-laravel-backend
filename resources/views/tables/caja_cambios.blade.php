@@ -16,14 +16,18 @@
         </thead>
         <tbody>
             @foreach ($gearboxes as $key => $gearbox)
+            <form action="{{route('gearboxes.delete')}}" method="POST">
+                @csrf
                 <tr>
+                    <input type="text" style="display:none;" name="id" value="{{$gearbox->id}}">
                     <th scope="row">{{$gearbox->id}}</th>
                     <td>{{$gearbox->tipo}}</td>
                     <th>
-                        <a href="{{route('home')}}" class="btn btn-primary btn-sm">Editar</a>
-                        <a href="{{route('home')}}" class="btn btn-primary btn-sm">Borrar</a>
+                        <a href="{{route('gearboxes.edit', $gearbox->id)}}" class="btn btn-primary btn-sm">Editar</a>
+                        <button type="submit" class="btn btn-primary btn-sm">Borrar</button>
                     </th>
                 </tr>
+            </form>
             @endforeach
         </tbody>
     </table>

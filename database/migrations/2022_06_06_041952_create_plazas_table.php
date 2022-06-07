@@ -15,7 +15,7 @@ class CreatePlazasTable extends Migration
     {
         Schema::create('plazas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cantidad')->default(6);
+            $table->unsignedBigInteger('cantidad');
             $table->timestamps();
         });
     }

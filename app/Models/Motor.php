@@ -17,4 +17,12 @@ class Motor extends Model
             'combustible' => $motor
         ]);
     }
+    public function updateMotor($id,$motor){
+        return Motor::where('id',$id)->update([
+            'combustible' => $motor
+        ]);
+    }
+    public function deleteMotor($id){
+        return Motor::where('id', $id)->delete();
+    }
 }

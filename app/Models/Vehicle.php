@@ -33,6 +33,22 @@ class Vehicle extends Model
             'peso' => $peso
         ]);
     }
+    public static function updateVehicle($id,$marca_id,$modelo_id,$motor_id,$traccion_id,$year_vehicle_id,$serie_id,$caja_cambios_id,$plazas_id,$peso){
+        return Vehicle::where('id',$id)->update([
+            'marca_id' => $marca_id,
+            'modelo_id' => $modelo_id,
+            'motor_id' => $motor_id,
+            'traccion_id' => $traccion_id,
+            'year_vehicle_id' => $year_vehicle_id,
+            'serie_id' => $serie_id,
+            'caja_cambios_id' => $caja_cambios_id,
+            'plazas_id' => $plazas_id,
+            'peso' => $peso
+        ]);
+    }
+    public function deleteVehicle($id){
+        return Vehicle::where('id', $id)->delete();
+    }
     public function marca(){
         return $this->belongsTo(Mark::class);
     }

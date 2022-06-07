@@ -17,4 +17,13 @@ class Gearbox extends Model
             'tipo' => $gearbox
         ]);
     }
+    public function updateGearbox($id,$gearbox){
+        return Gearbox::where('id','=',$id)->update([
+            'tipo' => $gearbox
+        ]);
+    }
+
+    public function deleteGearbox($id){
+        return Gearbox::where('id', $id)->delete();
+    }
 }

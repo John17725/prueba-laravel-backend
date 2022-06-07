@@ -15,7 +15,7 @@ class CreateCarroceriaTable extends Migration
     {
         Schema::create('carroceria', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo')->default('Minivan');
+            $table->string('tipo');
             $table->timestamps();
         });
     }

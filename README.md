@@ -20,11 +20,22 @@ You needed to install
 ## In S.O Windows
 - Recommended use laragon this app integrate php and mysql
 
-## Installation `Linux`
-Clone this repository in your computer after download, run command `composer install` after installing run command `php artisan run serve`
+## Installation `Linux` / `Windows`
+In windows open Laragon and download this repository in directory root folder of laragon then open terminal and continue with commands
 
-## Installation `Windows`
-Open Laragon and download this repository in directory root folder of laragon then open terminal and run command `composer install`
+Clone this repository in your computer after download, run command
+```bash 
+composer install
+``` 
+after installing run command 
+```bash
+npm install
+```
+then install dependencies compile project with
+```bash
+npm run dev
+```
+
 
 ## Configuration
 
@@ -34,6 +45,14 @@ Open with your preferred code editor this project and set your username and pass
 ### Configuration your MySQL
 Only your needed create database with this name `backendchallenge` and that is all for launching project
 
+### Creating tables in your database
+
+To create tables in database run the next command
+
+```bash
+php artisan migrate:fresh
+```
+This command create tables and relationships in database
 
 ## Launch project
 
@@ -42,3 +61,5 @@ Run command `php artisan serve` and open your browser and get this url `http://1
 
 ### Windows
 Open your laragon app and clicl button `Start all` after, click menu and select option www and select name "prueba-laravel-backend" and wait load your browser
+
+## After open your browser create an account in system then login with keys and use system
